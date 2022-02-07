@@ -17,7 +17,7 @@ public class StringTest {
 		String[] st;
 		st = str.split(",");
 		
-		// for ~ each 문 사용한다. (향상된 for문)
+		// 1. for문 사용
 		for(int i = 0; i < st.length; i++) {
 			
 			// 배열에 실수 데이터를 넣는다.
@@ -33,6 +33,25 @@ public class StringTest {
 		// 결과 값을 출력한다.
 		System.out.println("합계 : " + sum);
 		System.out.println("평균 : " + avg);
+		
+		// 2. for ~ each 문 사용한다. (향상된 for문)
+		int cnt = 0;
+		
+		for(String s : st) {
+			
+			// 배열에 실수 데이터를 넣는다.
+			data[cnt] = Double.parseDouble(s);
+			
+			// 배열 데이터의 합을 구한다.
+			sum += data[cnt];
+			cnt++;
+			
+		}
+		
+		// 결과 값을 출력한다.
+		// 합계와 평균은 모두 소수점 3자리까지만 표현한다.
+		System.out.printf("합계 : %.3f\n", sum);
+		System.out.printf("평균 : %.3f", sum/cnt);
 
 	}
 
