@@ -17,7 +17,7 @@ public class DateTest {
 		/* 생일 날짜 구하기 */
 		/* Calendar 클래스 : abstract 클래스 => 다형성 이용 */
 		int year = 1987;
-		int month = 4;
+		int month = 5;
 		int dayOfMonth = 27;
 		
 		Calendar birthDay = new GregorianCalendar(year, month, dayOfMonth);
@@ -64,7 +64,26 @@ public class DateTest {
 		
 		int birthTime = birthDay.get(Calendar.YEAR);
 		
-		System.out.println("나이 : 만 " + (presentTime - birthTime - 1) + " 세");
+		System.out.println("나이 : 만 " + (presentTime - birthTime) + " 세");
+		
+		/* 더 간편하게 */
+		System.out.println();
+		Calendar birth = new GregorianCalendar(1987, 5 -1, 27);
+		Calendar today2 = new GregorianCalendar();
+		
+		SimpleDateFormat sd1 = new SimpleDateFormat("yyyy년 M월 d일 E요일");
+		SimpleDateFormat sd2 = new SimpleDateFormat("yyyy년 M월 d일");
+		
+		int factor = 0;
+		if(today2.get(Calendar.DAY_OF_YEAR) < birth.get(Calendar.DAY_OF_YEAR)) {
+			factor = -1;
+		}
+		
+		int age = today2.get(Calendar.YEAR) - birth.get(Calendar.YEAR);
+		
+		System.out.println("생일 : " + sd1.format(birth.getTime()));
+		System.out.println("현재 : " + sd2.format(today2.getTime()));
+		System.out.println("나이 : 만 " + age + " 세");
 
 	}
 
