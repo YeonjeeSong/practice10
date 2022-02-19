@@ -1,7 +1,5 @@
 package ncs.test3;
 
-import java.util.Scanner;
-
 public class Calculator {
 
 	public double getSum(int data) throws InvalidException {

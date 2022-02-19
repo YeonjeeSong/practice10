@@ -15,13 +15,13 @@ public class ExceptionTest {
 		Calculator cal = new Calculator();
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("정수를 입력 하세요 : ");
+		System.out.print("정수를 입력 하세요(2 ~ 5 사이의 값만 입력) : ");
 		int data = sc.nextInt();
 		
 		try {
 			
 			double sum = cal.getSum(data);
-			System.out.println(sum);
+			System.out.println("입력 받은 수의 합 : " + sum);
 			
 		} catch (InvalidException e) {
 			System.out.println(e.getMessage());
