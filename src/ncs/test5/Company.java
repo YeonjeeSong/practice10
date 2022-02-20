@@ -25,6 +25,12 @@ public class Company {
 			}
 		}
 		
+		// 출력 결과가 가독성이 좋진 않지만 더 깔끔한 코드
+		System.out.println();
+		for(Employee e : employees) {
+			System.out.println(e.getName() + "    " + e.getDepartment() + "     " + e.getSalary());
+		}
+		
 		// 모든 객체에 인센티브 100 씩 지급한 급여를 계산하고, 다시 객체의 salary에 넣는다.
 		/* 800 + (100 * 0.8) = 880 / 1200 + (1200 * 1.2) = 1320 */
 		employees[0].setSalary(880);
@@ -41,6 +47,17 @@ public class Company {
 			} else if(i == 1) {
 				System.out.println(employees[i].getName() + "   " + employees[i].getDepartment() + 
 									"         " + employees[i].getSalary() + "     " + sales.tax());
+			}
+		}
+		
+		// 출력 결과가 가독성이 좋진 않지만 더 깔끔한 코드
+		System.out.println();
+		for(Employee e : employees) {
+			System.out.print(e.getName() + "    " + e.getDepartment() + "     " + e.getSalary() + "      ");
+			if( e instanceof Secretary) {
+				System.out.println(((Secretary)e).tax());
+			} else {
+				System.out.println(((Sales)e).tax());
 			}
 		}
 
